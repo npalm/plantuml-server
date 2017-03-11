@@ -43,4 +43,4 @@ USER plantuml
 WORKDIR /app
 EXPOSE 8080
 
-#ENTRYPOINT ["java", "-jar", "/jetty/start.jar"]
+ENTRYPOINT ["java", "-jar", "/jetty/start.jar"]
