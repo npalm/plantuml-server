@@ -2,7 +2,8 @@
 
 Dockerized plantuml server to run plantuml in a container. For details how to user plantuml-server see https://github.com/plantuml/plantuml-server
 
-This docker image differs to the one at the source repository since the server distrubimtion and jetty runtime are created at build time instead of execution time.
+## Motivation
+This docker image differs to the one at the source repository since the server distrubimtion and jetty runtime are created at build time instead of execution time. Also an extra non root user for execution is added.
 
 ## Run
 
