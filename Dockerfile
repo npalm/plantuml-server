@@ -31,7 +31,7 @@ RUN git clone https://github.com/plantuml/plantuml-server.git && \
   cd plantuml-server && /work/maven/bin/mvn package && cp target/plantuml.war /app/webapps/
 
 # Clean up
-#RUN apk del git openssl && rm -rf /var/cache/apk/* && rm -rf /work
+RUN apk del git openssl && rm -rf /var/cache/apk/* && rm -rf /work
 
 # Add user to run plantuml server
 RUN addgroup plantuml && \
