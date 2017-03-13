@@ -2,7 +2,7 @@ FROM openjdk:8-alpine
 MAINTAINER Niek Palm <dev.npalm@gmail.com>
 
 RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh
+    apk add --no-cache bash git openssh fontconfig ttf-dejavu
 
 RUN mkdir /graphviz && \
   apk add --update graphviz
@@ -28,10 +28,10 @@ RUN cd /app && \
 
 # Build and add plantuml
 RUN git clone https://github.com/plantuml/plantuml-server.git && \
-  cd plantuml-server && /work/maven/bin/mvn package && mv target/plantuml.war /app/webapps/
+  cd plantuml-server && /work/maven/bin/mvn package && cp target/plantuml.war /app/webapps/
 
 # Clean up
-RUN apk del git openssl && rm -rf /var/cache/apk/* && rm -rf /work
+#RUN apk del git openssl && rm -rf /var/cache/apk/* && rm -rf /work
 
 # Add user to run plantuml server
 RUN addgroup plantuml && \
